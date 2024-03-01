@@ -19,6 +19,7 @@ void insertNode( BST *, int );
 void inOrder( TreeNodePtr treePtr );
 void preOrder( TreeNodePtr treePtr );
 void postOrder( TreeNodePtr treePtr );
+void ass(TreeNodePtr treePtr,int l);
 int fac(int n);
 int fac_r(int n);
 void insertNode_R(TreeNodePtr * t,int value){
@@ -99,6 +100,23 @@ void inOrder( TreeNodePtr treePtr )
       inOrder( treePtr->rightPtr ); //Recursion to the right
    } // end if                          
 } // end 
+void ass(TreeNodePtr treePtr,int l)
+{
+   int i;
+   if ( treePtr != NULL )
+   {
+      // for(i = 0;i<l;i++) 
+      // {
+      //       printf("     ");
+      // }
+      
+      inOrder( treePtr->rightPtr ); //Recursion to the left
+      printf("%3d",treePtr->data) ;  //print the value 
+      inOrder( treePtr->leftPtr ); //Recursion to the right
+   
+
+   }
+}
 
 void preOrder( TreeNodePtr treePtr )
 { 
@@ -122,22 +140,5 @@ void postOrder( TreeNodePtr treePtr )
    } // end if                          
 } // end 
 
-// int fac(int n)
-// {
-//    int f=1;
-//    while(n>1)
-//    {
-//       f=f*n;
-//       n--;
-//    }
-//    return f;
-// }
 
-// int fac_r(int n)
-// {
-//    if(n==1) return 1;
-//    if(n==0) return 1;
-
-//    return n*fac_r(n-1);
-// }
 
