@@ -105,14 +105,15 @@ void ass(TreeNodePtr treePtr,int l)
    int i;
    if ( treePtr != NULL )
    {
-      // for(i = 0;i<l;i++) 
-      // {
-      //       printf("     ");
-      // }
+      l++;
+      for(i = 0;i<l;i++) 
+      {
+            printf("     ");
+      }
       
-      inOrder( treePtr->rightPtr ); //Recursion to the left
-      printf("%3d",treePtr->data) ;  //print the value 
-      inOrder( treePtr->leftPtr ); //Recursion to the right
+      ass( treePtr->rightPtr ,l); //Recursion to the left
+      printf("%3d\n",treePtr->data) ;  //print the value 
+      ass( treePtr->leftPtr,l); //Recursion to the right
    
 
    }
