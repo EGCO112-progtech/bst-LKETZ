@@ -16,6 +16,9 @@ typedef struct {
 // prototypes
 
 void insertNode( BST *, int );
+void inOrder( TreeNodePtr treePtr );
+void preOrder( TreeNodePtr treePtr );
+void postOrder( TreeNodePtr treePtr );
 int fac(int n);
 int fac_r(int n);
 void insertNode_R(TreeNodePtr * t,int value){
@@ -81,9 +84,7 @@ while(!inserted){
    }
 
   b->size++;
-   }//
-  
-//end function
+   }//end function
 
 
 void inOrder( TreeNodePtr treePtr )
@@ -99,21 +100,44 @@ void inOrder( TreeNodePtr treePtr )
    } // end if                          
 } // end 
 
-int fac(int n)
-{
-   int f=1;
-   while(n>1)
-   {
-      f=f*n;
-      n--;
-   }
-   return f;
-}
+void preOrder( TreeNodePtr treePtr )
+{ 
+   // if tree is not empty, then traverse
+   if ( treePtr != NULL ) {        
+        
+      printf("%3d",treePtr->data) ;  //print the value 
+      preOrder( treePtr->leftPtr ); //Recursion to the left
+      preOrder( treePtr->rightPtr ); //Recursion to the right
+   } // end if                          
+} // end 
+void postOrder( TreeNodePtr treePtr )
+{ 
+   // if tree is not empty, then traverse
+   if ( treePtr != NULL ) {        
+        
+      inOrder( treePtr->leftPtr ); //Recursion to the left
+      inOrder( treePtr->rightPtr ); //Recursion to the right
+      printf("%3d",treePtr->data) ;  //print the value 
+   
+   } // end if                          
+} // end 
 
-int fac_r(int n)
-{
-   if(n==1) return 1;
-   if(n==0) return 1;
+// int fac(int n)
+// {
+//    int f=1;
+//    while(n>1)
+//    {
+//       f=f*n;
+//       n--;
+//    }
+//    return f;
+// }
 
-   return n*fac_r(n-1);
-}
+// int fac_r(int n)
+// {
+//    if(n==1) return 1;
+//    if(n==0) return 1;
+
+//    return n*fac_r(n-1);
+// }
+
