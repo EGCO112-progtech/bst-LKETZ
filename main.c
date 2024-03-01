@@ -27,7 +27,7 @@ for ( i = 1; i < argc; ++i ) {
    postOrder( b.root );
 
    printf("\nprint tree\n");
-   ass(b.root,argc);
+   ass(b.root,0);
 
 
    // traverse the tree postOrder
