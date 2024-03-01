@@ -115,7 +115,6 @@ void ass(TreeNodePtr treePtr,int l)
       printf("%3d\n",treePtr->data) ;  //print the value 
       ass( treePtr->leftPtr,l); //Recursion to the right
    
-
    }
 }
 
